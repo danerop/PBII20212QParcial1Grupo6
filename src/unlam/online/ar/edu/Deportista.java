@@ -1,6 +1,7 @@
 package unlam.online.ar.edu;
 
 public class Deportista {
+	
     private String nombre;
     private int edad;
     private double peso;
