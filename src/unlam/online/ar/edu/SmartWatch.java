@@ -11,14 +11,13 @@ public class SmartWatch {
     }
 
     public Boolean agregarDeportista(Deportista deportista) {
-        for (int i=0;i<deportistas.length; i++){
-            if(deportistas[i]==null){
+        for (int i=0;i<deportistas.length; i++) {
+            if(deportistas[i]==null) {
                 deportistas[i]=deportista;
                 return true;
             }
         }
         return false;
     }
-
 
 }
