@@ -7,12 +7,12 @@ public class Deportista {
     private int altura;
     private int pasosDiarios;
 
-    public Deportista(String nombre, int edad, double peso, int altura, int pasosDiarios) {
+    public Deportista(String nombre, int edad, double peso, int altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
-        this.pasosDiarios = pasosDiarios;
+        this.pasosDiarios = 0; 
     }
 
     public String getNombre() {
