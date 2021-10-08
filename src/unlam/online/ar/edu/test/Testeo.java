@@ -3,7 +3,7 @@ package unlam.online.ar.edu.test;
 import org.junit.Test;
 import unlam.online.ar.edu.*;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class Testeo {
     @Test
@@ -20,27 +20,31 @@ public class Testeo {
     public void queSePuedaCalcularLosPasosDiarios() {
     	SmartWatch smartWatch = new SmartWatch("Nickname");
 	    Deportista deportista = new Deportista("Nombre",22,65.3,170);
-	    smartWatch.agregarDeportista(deportista);
+	    Deportista deportista1 = new Deportista("Nombre2",22,65.3,170);
+	    
+	    assertTrue(smartWatch.agregarDeportista(deportista));
+	    assertTrue(smartWatch.agregarDeportista(deportista1));
 	    
 	    //agrega entrenamientos
-	    Entrenamiento entrenamiento1 = new Caminata(deportista, 02, 12, 2021);
-	    Entrenamiento entrenamiento2 = new Caminata(deportista, 02, 12, 2021);
-	    Entrenamiento entrenamiento3 = new Natacion(deportista, 03, 12, 2021);
+	    Entrenamiento entrenamiento1 = new Caminata(deportista, 2, 12, 2021);
+	    Entrenamiento entrenamiento2 = new Caminata(deportista, 2, 12, 2021);
+	    Entrenamiento entrenamiento3 = new Natacion(deportista1, 1, 1, 21);
 	    
 	    entrenamiento1.setContadorPasos(250);
 	    entrenamiento2.setContadorPasos(750);
 	    entrenamiento3.setContadorPasos(10);
 	    
-	    smartWatch.agregarEntrenamiento(entrenamiento1);
-	    smartWatch.agregarEntrenamiento(entrenamiento2);
-	    smartWatch.agregarEntrenamiento(entrenamiento3);
+	    assertTrue(smartWatch.agregarEntrenamiento(entrenamiento1));
+	    assertTrue(smartWatch.agregarEntrenamiento(entrenamiento2));
+	    assertTrue(smartWatch.agregarEntrenamiento(entrenamiento3));
 	    
-	    smartWatch.calcularPasosDiarios(deportista, 02, 12, 2021);
+	    smartWatch.calcularPasosDiarios(deportista, 2, 12, 2021);
 	    
-	    Integer valorEsperado = 100;
+	    Integer valorEsperado = 1000;
 	    Integer valorObtenido = smartWatch.getPasosDiariosDeDeportista(deportista);
 	    
-	    assertEquals()
+	    assertEquals(valorEsperado, valorObtenido);
+
     }
     
 }

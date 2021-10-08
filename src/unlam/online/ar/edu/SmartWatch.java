@@ -30,26 +30,28 @@ public class SmartWatch {
     }
     
     //agrega el entrenamiento realizado a la lista de entrenamientos del reloj
-    public void agregarEntrenamiento(Entrenamiento nuevoEntrenamiento) {
+    public Boolean agregarEntrenamiento(Entrenamiento nuevoEntrenamiento) {
     	for (int i=0; i<entrenamientos.length; i++){
             if(entrenamientos[i] == null){
                 entrenamientos[i] = nuevoEntrenamiento;
+                return true;
             }
         }
+    	return false;
     }
     
     //calcula la cantidad de pasos hechos en el dia
-    public void calcularPasosDiarios(Deportista deportistaAPromediarPasos, Integer dia, Integer mes, Integer anio) {
+    public void calcularPasosDiarios(Deportista deportistaAPromediarPasos, int dia, int mes, int anio) {
     	
     	Integer cantidadDePasosEnElDia = 0;
     	
     	for (int i=0; i<entrenamientos.length; i++) {
     		if(entrenamientos[i] != null){
     			
-                if(entrenamientos[i].getDeportista().equals(deportistaAPromediarPasos)
-                		&& entrenamientos[i].getDia() == dia 
+                if(entrenamientos[i].getDeportista().equals(deportistaAPromediarPasos) 
+                		&& (entrenamientos[i].getDia() == dia 
                 		&& entrenamientos[i].getMes() == mes 
-                		&& entrenamientos[i].getAnio() == anio) {
+                		&& entrenamientos[i].getAnio() == anio)) {
                 	
                 	cantidadDePasosEnElDia += entrenamientos[i].getContadorPasos();
                 	
@@ -58,7 +60,7 @@ public class SmartWatch {
     	}
     	
     	for (int i=0;i<deportistas.length; i++){
-            if(deportistas[i]==null){
+            if(deportistas[i]!=null){
                 if(deportistas[i].equals(deportistaAPromediarPasos)) {
                 	deportistas[i].setPasosDiarios(cantidadDePasosEnElDia);
                 }
@@ -68,7 +70,16 @@ public class SmartWatch {
     }
     
     public Integer getPasosDiariosDeDeportista (Deportista deportistaBuscado) {
-    	//[HACER] devolvería la cantidad de pasosDiarios de un deportista del array
-    	return 1;
+    	Integer cantidadDePasosDiarios = 0;
+    	
+    	for (int i=0;i<deportistas.length; i++){
+            if(deportistas[i]!=null){
+                if(deportistas[i].equals(deportistaBuscado)) {
+                	cantidadDePasosDiarios = deportistas[i].getPasosDiarios();
+                }
+            }
+        }
+    	
+    	return cantidadDePasosDiarios;
     }
 }
