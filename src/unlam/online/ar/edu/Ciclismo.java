@@ -1,15 +1,12 @@
 package unlam.online.ar.edu;
 
-import unlam.online.ar.edu.Deportista;
-import unlam.online.ar.edu.Entrenamiento;
-
 public class Ciclismo extends Entrenamiento {
     private Double velocidadEnKmPorHora;
     private Double cadenciaEnRevolucionesPorMinuto;
     ZonasDeFrecuenciaCardiaca zonaDeFrecuenciaCardiaca;
 
-    public Ciclismo(Integer dia, Integer mes, Integer anio) {
-        super(dia, mes, anio);
+    public Ciclismo(Deportista deportista, Integer dia, Integer mes, Integer anio) {
+        super(deportista, dia, mes, anio);
     }
 
     public void calcularVelocidad() {
@@ -26,17 +23,17 @@ public class Ciclismo extends Entrenamiento {
         cadenciaEnRevolucionesPorMinuto=cadencia;
     }
 
+    @Override
+    public String getTipoEntrenamiento() {
+    	return "Ciclismo";
+    }
+    
+    @Override
     public Double getDistanciaRecorrida() {
         //devuelve la distancia recorrida en kilometros
-
-        return super.getContadorMetros()/1000;
+        return (double) (super.getContadorMetros()/1000);
     }
-
-    public Double getTiempoTrascurrido() {
-        //devuelve el tiempo transcurrido en horas
-
-        return super.getContadorSegundos()/3600;
-    }
+    
     public Double getVelocidadEnKmPorHora() {
         return velocidadEnKmPorHora;
     }

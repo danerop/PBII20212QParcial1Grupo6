@@ -1,26 +1,19 @@
 package unlam.online.ar.edu;
 
 public class Caminata extends Entrenamiento {
-    private Integer contadorPasos;
 
-    public Caminata(Integer dia, Integer mes, Integer anio) {
-        super(dia, mes, anio);
+    public Caminata(Deportista deportista, Integer dia, Integer mes, Integer anio) {
+        super(deportista, dia, mes, anio);
     }
-
-    public void sumarPaso(){
-        contadorPasos++;
+    
+    @Override
+    public String getTipoEntrenamiento() {
+    	return "Caminata";
     }
-    public Double getDistanciaDelRecorrido() {
+    
+    @Override
+    public Double getDistanciaRecorrida() {
         //devuelve la distancia recorrida en metros
-        return super.getContadorMetros();
-    }
-
-    public Double getTiempoEnMinutos() {
-        //devuelve el tiempo recorrido en minutos
-        return super.getContadorSegundos()/60;
-    }
-
-    public Integer getContadorPasos() {
-        return contadorPasos;
+        return (double)(super.getContadorMetros());
     }
 }
