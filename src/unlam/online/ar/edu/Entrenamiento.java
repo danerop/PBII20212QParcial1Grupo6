@@ -71,6 +71,17 @@ public abstract class Entrenamiento {
 	public Integer getContadorPasos() {
         return contadorPasos;
     }
+	
+
+	public void setContadorSegundos(Integer contadorSegundos) {
+		this.contadorSegundos = contadorSegundos;
+	}
+	public void setContadorMetros(Integer contadorMetros) {
+		this.contadorMetros = contadorMetros;
+	}
+	public void setContadorPasos(Integer contadorPasos) {
+		this.contadorPasos = contadorPasos;
+	}
 
 	public Integer getDia() {
 		return dia;
