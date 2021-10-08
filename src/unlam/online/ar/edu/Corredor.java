@@ -2,17 +2,21 @@ package unlam.online.ar.edu;
 
 public class Corredor extends Deportista {
 	
-	private double distanciaRecorridaEnKm;
-	private double tiempoTranscurrido;
-	private double ritmoEnMin;
 	private ZonasDeFrecuenciaCardiaca zonaDeFrecuenciaCardiaca;
+	private double distanciaRecorridaEnKm;
+	private double tiempoEnMin;
+	private double ritmoXKm;
 	
 	public Corredor(String nombre, int edad, double peso, int altura, int pasosDiarios) {
 		super(nombre, edad, peso, altura, pasosDiarios);
-		this.distanciaRecorridaEnKm = 0.;
-		this.tiempoTranscurrido = 0;
-		this.ritmoEnMin = 0;
 		this.zonaDeFrecuenciaCardiaca = new ZonasDeFrecuenciaCardiaca("Corredor");
+		this.distanciaRecorridaEnKm = 0.;
+		this.tiempoEnMin = 0;
+		this.ritmoXKm = 0;
+	}
+	
+	public void calcularRitmoXKm() {
+		this.ritmoXKm = this.tiempoEnMin / this.distanciaRecorridaEnKm;
 	}
 
 	public String obtenerZonaDeFrecuenciaCardiaca(int frecuenciaCardiaca) {
@@ -23,12 +27,12 @@ public class Corredor extends Deportista {
 		return distanciaRecorridaEnKm;
 	}
 
-	public double getTiempoTranscurrido() {
-		return tiempoTranscurrido;
+	public double getTiempoEnMin() {
+		return tiempoEnMin;
 	}
 
-	public double getRitmoEnMin() {
-		return ritmoEnMin;
+	public double getRitmoXKm() {
+		return ritmoXKm;
 	}
 	
 }
