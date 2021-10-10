@@ -7,7 +7,7 @@ public class Carrera extends Entrenamiento {
 
     public Carrera(Deportista deportista, Integer dia, Integer mes, Integer anio) {
         super(deportista, dia, mes, anio);
-        this.zonaDeFrecuenciaCardiaca = new ZonasDeFrecuenciaCardiaca("Corredor");
+        this.zonaDeFrecuenciaCardiaca = new ZonasDeFrecuenciaCardiaca(this.getTipoEntrenamiento());
         this.ritmoXKm = 0;
     }
 

@@ -7,6 +7,7 @@ public class Ciclismo extends Entrenamiento {
 
     public Ciclismo(Deportista deportista, Integer dia, Integer mes, Integer anio) {
         super(deportista, dia, mes, anio);
+        this.zonaDeFrecuenciaCardiaca = new ZonasDeFrecuenciaCardiaca(this.getTipoEntrenamiento());
     }
 
     public void calcularVelocidad() {

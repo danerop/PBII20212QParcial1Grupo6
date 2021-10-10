@@ -8,33 +8,33 @@ public class ZonasDeFrecuenciaCardiaca {
     private TipoDeZona umbral;
     private TipoDeZona maximo;
 
-    public ZonasDeFrecuenciaCardiaca(String tipoDeDeportista) {
+    public ZonasDeFrecuenciaCardiaca(String tipoDeEntrenamiento) {
         this.descanso = new TipoDeZona("DESCANSO");
         this.calentamiento = new TipoDeZona("CALENTAMIENTO");
         this.aerobico = new TipoDeZona("AEOROBICO");
         this.umbral = new TipoDeZona("UMBRAL");
         this.maximo = new TipoDeZona("MAXIMO");
-        verificarTipoDeDeportista(tipoDeDeportista);
+        verificarTipoDeEntrenamiento(tipoDeEntrenamiento);
     }
 
     // Define los limites de frecuencia cardiaca para cada deportista, ya si sea "corredor" o "ciclista"
-    private void verificarTipoDeDeportista(String tipoDeDeportista) {
+    private void verificarTipoDeEntrenamiento(String tipoDeEntrenamiento) {
 
-        switch(tipoDeDeportista) {
-            case "Corredor":
+        switch(tipoDeEntrenamiento) {
+            case "Carrera":
                 descanso.asignarLimites(50, 100);
-                calentamiento.asignarLimites(101, 130);
-                aerobico.asignarLimites(131, 150);
-                umbral.asignarLimites(151, 174);
-                maximo.asignarLimites(175, 200);
+                calentamiento.asignarLimites(110, 130);
+                aerobico.asignarLimites(140, 155);
+                umbral.asignarLimites(156, 175);
+                maximo.asignarLimites(180, 200);
                 break;
 
-            case "Ciclista": // Falta asignar limites del ciclista
-                descanso.asignarLimites(0, 0);
-                calentamiento.asignarLimites(0, 0);
-                aerobico.asignarLimites(0, 0);
-                umbral.asignarLimites(0, 0);
-                maximo.asignarLimites(0, 0);
+            case "Ciclismo": // Falta asignar limites del ciclista
+                descanso.asignarLimites(50, 100);
+                calentamiento.asignarLimites(125, 140);
+                aerobico.asignarLimites(145, 160);
+                umbral.asignarLimites(165, 180);
+                maximo.asignarLimites(185, 200);
                 break;
         }
     }

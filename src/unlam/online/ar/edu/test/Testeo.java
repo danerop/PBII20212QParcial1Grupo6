@@ -44,7 +44,24 @@ public class Testeo {
         Integer valorObtenido = smartWatch.getPasosDiariosDeDeportista(deportista);
 
         assertEquals(valorEsperado, valorObtenido);
-
+    }
+    
+    @Test
+    public void queSePuedaObtenerZonaDeFrecuenciaCardiaca() {
+    	Deportista deportista = new Deportista("Nombre",22,65.3,170);
+    	//CLASE CARRERA
+    	Carrera carrera = new Carrera(deportista, 10, 10, 2021);
+    	
+    	String valorObtenido1= carrera.obtenerZonaDeFrecuenciaCardiaca(90);
+    	
+    	assertEquals("DESCANSO", valorObtenido1);
+    	
+    	//CLASE CICLISMO
+    	Ciclismo ciclismo = new Ciclismo(deportista, 02, 12, 2041);
+    	
+    	String valorObtenido2 = ciclismo.obtenerZonaDeFrecuenciaCardiaca(130);
+    	
+    	assertEquals("CALENTAMIENTO", valorObtenido2);
     }
 
 }
