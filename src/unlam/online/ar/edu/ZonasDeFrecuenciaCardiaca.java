@@ -7,6 +7,7 @@ public class ZonasDeFrecuenciaCardiaca {
     private TipoDeZona aerobico;
     private TipoDeZona umbral;
     private TipoDeZona maximo;
+    private String tipoEntrenamiento;
 
     public ZonasDeFrecuenciaCardiaca(String tipoDeEntrenamiento) {
         this.descanso = new TipoDeZona("DESCANSO");
@@ -14,11 +15,11 @@ public class ZonasDeFrecuenciaCardiaca {
         this.aerobico = new TipoDeZona("AEOROBICO");
         this.umbral = new TipoDeZona("UMBRAL");
         this.maximo = new TipoDeZona("MAXIMO");
-        verificarTipoDeEntrenamiento(tipoDeEntrenamiento);
+        this.tipoEntrenamiento=verificarTipoDeEntrenamiento(tipoDeEntrenamiento);
     }
 
     // Define los limites de frecuencia cardiaca para cada deportista, ya si sea "corredor" o "ciclista"
-    private void verificarTipoDeEntrenamiento(String tipoDeEntrenamiento) {
+    private String verificarTipoDeEntrenamiento(String tipoDeEntrenamiento) {
 
         switch(tipoDeEntrenamiento) {
             case "Carrera":
@@ -37,6 +38,7 @@ public class ZonasDeFrecuenciaCardiaca {
                 maximo.asignarLimites(185, 200);
                 break;
         }
+		return tipoDeEntrenamiento;
     }
 
     public String calcularZonaDeFrecuenciaCardiaca(int frecuenciaCardiaca) {
@@ -63,4 +65,12 @@ public class ZonasDeFrecuenciaCardiaca {
         }
         return null;
     }
+
+	public String getTipoEntrenamiento() {
+		return tipoEntrenamiento;
+	}
+
+
+    
+    
 }

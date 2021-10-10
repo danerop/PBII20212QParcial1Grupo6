@@ -9,7 +9,7 @@ public class Natacion extends Entrenamiento {
         ritmoCadaCienM = "";
     }
 
-    public void calcularRitmoCadaCienM() {
+    public String calcularRitmoCadaCienM() {
         //vacia ritmoCadaCienM
         ritmoCadaCienM = "";
 
@@ -33,6 +33,7 @@ public class Natacion extends Entrenamiento {
         }else {
             this.ritmoCadaCienM += "" + segundos;
         }
+		return ritmoCadaCienM;
     }
 
     @Override
@@ -49,5 +50,9 @@ public class Natacion extends Entrenamiento {
     public String getRitmoCadaCienM() {
         //devuelve el ritmo (mm:ss que tarda en recorrer 100 metros)
         return ritmoCadaCienM;
+        
     }
+    
+    
+    
 }

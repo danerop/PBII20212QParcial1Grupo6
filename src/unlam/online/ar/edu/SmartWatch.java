@@ -6,10 +6,12 @@ public class SmartWatch {
     private Deportista[] deportistas;
     private Entrenamiento[] entrenamientos;
 
+
     public SmartWatch(String nickname) {
         this.nickname = nickname;
-        this.deportistas = new Deportista[10];
+        this.deportistas = new Deportista[3];
         this.entrenamientos = new Entrenamiento[50];
+   
     }
 
     public Boolean agregarDeportista(Deportista deportista) {
@@ -21,13 +23,16 @@ public class SmartWatch {
         }
         return false;
     }
+    
+    
+    
     public Boolean eliminarDeportista(Deportista deportista) {
         //[HACER] ser�a parecido a la de agregar Deportista solo que comparando con
         //equals si son el mismo deportista, para despues borrarlo.
 
         //Este metodo se puede borrar, no es solicitado por el ejercicio.
-        return true;
-    }
+    	
+        return true;}
 
     //agrega el entrenamiento realizado a la lista de entrenamientos del reloj
     public Boolean agregarEntrenamiento(Entrenamiento nuevoEntrenamiento) {
@@ -41,8 +46,8 @@ public class SmartWatch {
     }
 
     //calcula la cantidad de pasos hechos en el dia
-    public void calcularPasosDiarios(Deportista deportistaAPromediarPasos, int dia, int mes, int anio) {
-
+    public boolean calcularPasosDiarios(Deportista deportistaAPromediarPasos, int dia, int mes, int anio) {
+    boolean calculado=false;
         Integer cantidadDePasosEnElDia = 0;
 
         for (int i=0; i<entrenamientos.length; i++) {
@@ -52,8 +57,8 @@ public class SmartWatch {
                         && (entrenamientos[i].getDia() == dia
                         && entrenamientos[i].getMes() == mes
                         && entrenamientos[i].getAnio() == anio)) {
-
                     cantidadDePasosEnElDia += entrenamientos[i].getContadorPasos();
+                    calculado=true;
 
                 }
             }
@@ -63,9 +68,12 @@ public class SmartWatch {
             if(deportistas[i]!=null){
                 if(deportistas[i].equals(deportistaAPromediarPasos)) {
                     deportistas[i].setPasosDiarios(cantidadDePasosEnElDia);
+                    calculado=true;
                 }
             }
         }
+		return false;
+	
 
     }
 
