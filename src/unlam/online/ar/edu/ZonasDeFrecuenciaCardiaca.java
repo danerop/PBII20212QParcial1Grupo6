@@ -45,23 +45,23 @@ public class ZonasDeFrecuenciaCardiaca {
 
     	if(frecuenciaCardiaca >= descanso.getFrecuenciaCardiacaMin() &&
                 frecuenciaCardiaca <= descanso.getFrecuenciaCardiacaMax()) {
-            return "DESCANSO";
+            return descanso.getNombre();
         }
         if(frecuenciaCardiaca >= calentamiento.getFrecuenciaCardiacaMin() &&
                 frecuenciaCardiaca <= calentamiento.getFrecuenciaCardiacaMax()) {
-            return "CALENTAMIENTO";
+            return calentamiento.getNombre();
         }
         if(frecuenciaCardiaca >= aerobico.getFrecuenciaCardiacaMin() &&
                 frecuenciaCardiaca <= aerobico.getFrecuenciaCardiacaMax()) {
-            return "AEROBICO";
+            return aerobico.getNombre();
         }
         if(frecuenciaCardiaca >= umbral.getFrecuenciaCardiacaMin() &&
                 frecuenciaCardiaca <= umbral.getFrecuenciaCardiacaMax()) {
-            return "UMBRAL";
+            return umbral.getNombre();
         }
         if(frecuenciaCardiaca >= maximo.getFrecuenciaCardiacaMin() &&
                 frecuenciaCardiaca <= maximo.getFrecuenciaCardiacaMax()) {
-            return "MAXIMO";
+            return maximo.getNombre();
         }
         return null;
     }
