@@ -43,25 +43,25 @@ public class ZonasDeFrecuenciaCardiaca {
 
     public String calcularZonaDeFrecuenciaCardiaca(int frecuenciaCardiaca) {
 
-    	if(frecuenciaCardiaca >= 50 &&
-                frecuenciaCardiaca <= 100) {
-            return descanso.getNombre();
+    	if(frecuenciaCardiaca >= descanso.getFrecuenciaCardiacaMin() &&
+                frecuenciaCardiaca <= descanso.getFrecuenciaCardiacaMax()) {
+            return "DESCANSO";
         }
-        if(frecuenciaCardiaca >= 110 &&
-                frecuenciaCardiaca <= 130) {
-            return calentamiento.getNombre();
+        if(frecuenciaCardiaca >= calentamiento.getFrecuenciaCardiacaMin() &&
+                frecuenciaCardiaca <= calentamiento.getFrecuenciaCardiacaMax()) {
+            return "CALENTAMIENTO";
         }
-        if(frecuenciaCardiaca >= 140 &&
-                frecuenciaCardiaca <= 155) {
-            return aerobico.getNombre();
+        if(frecuenciaCardiaca >= aerobico.getFrecuenciaCardiacaMin() &&
+                frecuenciaCardiaca <= aerobico.getFrecuenciaCardiacaMax()) {
+            return "AEROBICO";
         }
-        if(frecuenciaCardiaca >= 156 &&
-                frecuenciaCardiaca <= 175) {
-            return umbral.getNombre();
+        if(frecuenciaCardiaca >= umbral.getFrecuenciaCardiacaMin() &&
+                frecuenciaCardiaca <= umbral.getFrecuenciaCardiacaMax()) {
+            return "UMBRAL";
         }
-        if(frecuenciaCardiaca >= 180 &&
-                frecuenciaCardiaca <= 200) {
-            return maximo.getNombre();
+        if(frecuenciaCardiaca >= maximo.getFrecuenciaCardiacaMin() &&
+                frecuenciaCardiaca <= maximo.getFrecuenciaCardiacaMax()) {
+            return "MAXIMO";
         }
         return null;
     }
